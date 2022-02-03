@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@mui/material'
+import { Button, ColorPicker } from '@mantine/core'
 
 interface ButtonProps {
   children: JSX.Element | JSX.Element[] | string
@@ -13,9 +13,11 @@ const CustomButton = ({
   bgColor = 'bg-red-300',
 }: ButtonProps): JSX.Element | null => {
   return (
-    <Button variant="outlined" className={` text-1xl font-bold m-10 ${textColor} ${bgColor} `}>
-      {children}
-    </Button>
+    <>
+      <Button className={` text-1xl font-bold m-10 ${textColor} ${bgColor} p-2 rounded-md `}>
+        {children}
+      </Button>
+    </>
   )
 }
 
