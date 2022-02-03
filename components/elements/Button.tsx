@@ -3,29 +3,22 @@ import { Button, ColorPicker } from '@mantine/core'
 
 interface ButtonProps {
   children: JSX.Element | JSX.Element[] | string
-  textColor: string
+  textColor?: string
   bgColor?: string
 }
 
-const CustomButton = () => {
+const CustomButton = ({
+  children,
+  textColor = 'bg-green-300',
+  bgColor = 'bg-red-300',
+}: ButtonProps): JSX.Element | null => {
   return (
     <>
-      <h2>hello</h2>
+      <Button className={` text-1xl font-bold m-10 ${textColor} ${bgColor} p-2 rounded-md `}>
+        {children}
+      </Button>
     </>
   )
 }
-// const CustomButton = ({
-//   children,
-//   textColor = 'bg-green-300',
-//   bgColor = 'bg-red-300',
-// }: ButtonProps): JSX.Element | null => {
-//   return (
-//     <>
-//       <Button className={` text-1xl font-bold m-10 ${textColor} ${bgColor} p-2 rounded-md `}>
-//         {children}
-//       </Button>
-//     </>
-//   )
-// }
 
 export default CustomButton
